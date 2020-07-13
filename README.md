@@ -48,6 +48,11 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://github.com/devanshiu/Parstagram/blob/master/Insta%20demo%20login.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+Sign Up Functionality Walkthrough:
+
+<img src='https://github.com/devanshiu/Parstagram/blob/master/Insta%20sign%20up%20demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Credits
