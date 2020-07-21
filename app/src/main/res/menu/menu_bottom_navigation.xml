@@ -4,8 +4,13 @@
 
     <item
         android:id="@+id/action_home"
-        android:icon="@drawable/instagram_home_outline_24"
+        android:icon="@drawable/home"
         android:title="Home"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_news"
+        android:icon="@drawable/newspaper"
+        android:title="News"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_compose"
@@ -13,8 +18,13 @@
         android:title="Compose"
         app:showAsAction="always" />
     <item
+        android:id="@+id/action_dm"
+        android:icon="@drawable/comment"
+        android:title="Message"
+        app:showAsAction="always" />
+    <item
         android:id="@+id/action_profile"
-        android:icon="@drawable/instagram_user_outline_24"
+        android:icon="@drawable/user"
         android:title="Profile"
         app:showAsAction="always" />
 </menu>

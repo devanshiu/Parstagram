@@ -12,13 +12,6 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="82dp"
-        android:layout_weight="1"
-        app:srcCompat="@drawable/nav_logo_whiteout" />
-
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
@@ -42,9 +35,29 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_weight="1"
         android:backgroundTint="#3F729B"
         android:hint="Log In"
+        android:textColorHint="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tvSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Don't have an account?" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="0dp"
+        android:layout_weight="1"
+        android:backgroundTint="#3F729B"
+        android:hint="Sign Up"
         android:textColorHint="#FFFFFF" />
 
 </LinearLayout>

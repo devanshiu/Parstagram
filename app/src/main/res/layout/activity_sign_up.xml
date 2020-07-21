@@ -12,13 +12,6 @@
     android:orientation="vertical"
     tools:context=".SignUpActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="82dp"
-        android:layout_weight="1"
-        app:srcCompat="@drawable/nav_logo_whiteout" />
-
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
