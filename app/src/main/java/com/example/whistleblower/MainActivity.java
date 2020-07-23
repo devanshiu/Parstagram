@@ -4,9 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.whistleblower.fragments.ComposeFragment;
 import com.example.whistleblower.fragments.NewsFragment;
@@ -22,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     final FragmentManager fragmentManager = getSupportFragmentManager();
     private BottomNavigationView bottomNavigationView;
+    ViewPager viewPager;
+    PagerAdapter adapter;
 
 
     @Override
@@ -61,5 +66,10 @@ public class MainActivity extends AppCompatActivity {
         });
         // Set default selection
         bottomNavigationView.setSelectedItemId(R.id.action_home);
+
+//        Toast.makeText(MainActivity.this,"Double tap to like",Toast.LENGTH_LONG).show();
+//        viewPager = (ViewPager) findViewById(R.id.pPager);
+//        adapter = new ViewPagerAdapter(MainActivity.this, myImageList);
+//        viewPager.setAdapter(adapter);
     }
 }

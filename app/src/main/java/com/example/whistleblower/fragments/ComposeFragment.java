@@ -25,7 +25,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.whistleblower.Posts;
+import com.example.whistleblower.Post;
 import com.example.whistleblower.R;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -175,7 +175,7 @@ public class ComposeFragment extends Fragment {
     }
 
     private void savePost(String description, ParseUser currentUser, File photoFile) {
-        Posts posts = new Posts();
+        Post posts = new Post();
         posts.setDescription(description);
         posts.setImage(new ParseFile(photoFile));
         posts.setUser(currentUser);

@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.whistleblower.EndlessRecyclerViewScrollListener;
-import com.example.whistleblower.Posts;
+import com.example.whistleblower.Post;
 import com.example.whistleblower.PostsAdapter;
 import com.example.whistleblower.R;
 import com.parse.FindCallback;
@@ -29,7 +29,7 @@ public class PostsFragment extends Fragment {
     public static final String TAG = "PostsFragment";
     private RecyclerView rvPosts;
     protected PostsAdapter adapter;
-    protected List<Posts> allPosts;
+    protected List<Post> allPosts;
     protected SwipeRefreshLayout swipeContainer;
     EndlessRecyclerViewScrollListener.EndlessRVScrollListener scrollListener;
 
@@ -96,20 +96,20 @@ public class PostsFragment extends Fragment {
     }
 
     protected void queryPosts() {
-        ParseQuery<Posts> query = ParseQuery.getQuery(Posts.class);
-        query.include(Posts.KEY_USER);
-        query.include(Posts.KEY_IMAGE);
+        ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
+        query.include(Post.KEY_USER);
+        query.include(Post.KEY_IMAGE);
         query.setLimit(20);
-        query.addDescendingOrder(Posts.KEY_CREATED_AT);
-        query.findInBackground(new FindCallback<Posts>() {
+        query.addDescendingOrder(Post.KEY_CREATED_AT);
+        query.findInBackground(new FindCallback<Post>() {
             @Override
-            public void done(List<Posts> posts, ParseException e) {
+            public void done(List<Post> posts, ParseException e) {
                 if (e != null) {
                     Log.e(TAG, "Issue with getting posts", e);
                     return;
                 }
-                for (Posts post: posts) {
-                    Log.i(TAG, "Posts: " + post.getDescription()+ ", username: " + post.getUser().getUsername());
+                for (Post post: posts) {
+                    Log.i(TAG, "Post: " + post.getDescription()+ ", username: " + post.getUser().getUsername());
 
                     swipeContainer.setRefreshing(false);
                 }

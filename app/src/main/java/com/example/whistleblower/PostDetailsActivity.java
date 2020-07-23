@@ -4,6 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.text.format.DateUtils;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.ImageView;
 
@@ -17,7 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 public class PostDetailsActivity extends AppCompatActivity {
-    public Posts posts;
+    public Post posts;
     public TextView tvUsername;
     public TextView tvDescription;
     public TextView tvDate;

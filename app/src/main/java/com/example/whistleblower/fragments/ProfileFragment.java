@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.example.whistleblower.Posts;
+import com.example.whistleblower.Post;
 import com.example.whistleblower.PostsAdapter;
 import com.example.whistleblower.R;
 import com.parse.FindCallback;
@@ -26,7 +26,7 @@ import java.util.List;
 public class ProfileFragment extends PostsFragment{
     public static final String TAG = "ProfileFragment";
     protected PostsAdapter adapter;
-    protected List<Posts> allPosts;
+    protected List<Post> allPosts;
     private SwipeRefreshLayout swipeContainer;
 
     @Override
@@ -77,20 +77,20 @@ public class ProfileFragment extends PostsFragment{
     }
 
     protected void queryPosts() {
-        ParseQuery<Posts> query = ParseQuery.getQuery(Posts.class);
+        ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
         //adapter.clear();
-        query.include(Posts.KEY_USER);
-        query.whereEqualTo(Posts.KEY_USER, ParseUser.getCurrentUser());
+        query.include(Post.KEY_USER);
+        query.whereEqualTo(Post.KEY_USER, ParseUser.getCurrentUser());
         query.setLimit(20);
-        query.addDescendingOrder(Posts.KEY_CREATED_AT);
-        query.findInBackground(new FindCallback<Posts>() {
+        query.addDescendingOrder(Post.KEY_CREATED_AT);
+        query.findInBackground(new FindCallback<Post>() {
             @Override
-            public void done(List<Posts> posts, ParseException e) {
+            public void done(List<Post> posts, ParseException e) {
                 if (e != null) {
                     Log.e(TAG, "Issue with getting posts", e);
                     return;
                 }
-                for (Posts post: posts) {
+                for (Post post: posts) {
                     Log.i(TAG, "Posts: " + post.getDescription() + ", username: " + post.getUser().getUsername());
                 }
                 allPosts.addAll(posts);

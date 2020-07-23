@@ -12,3 +12,7 @@
 /captures
 .externalNativeBuild
 .cxx
+./app/src/main/java/com/example/whistleblower/ParseApplication.java
+./app/src/main/res/layout/image_comment.xml
+./app/src/main/res/layout/viewpager_item.xml
+./app/src/main/res/layout/viewpager_main.xml

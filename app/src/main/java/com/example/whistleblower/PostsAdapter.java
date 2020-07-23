@@ -20,9 +20,9 @@ import java.util.List;
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> {
 
     private Context context;
-    private List<Posts> posts;
+    private List<Post> posts;
 
-    public PostsAdapter(Context context, List <Posts> posts) {
+    public PostsAdapter(Context context, List<Post> posts) {
         this.context = context;
         this.posts = posts;
     }
@@ -36,7 +36,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Posts posts = this.posts.get(position);
+        Post posts = this.posts.get(position);
         holder.bind(posts);
     }
 
@@ -50,7 +50,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         notifyDataSetChanged();
     }
 
-    public void addAll(List<Posts> list) {
+    public void addAll(List<Post> list) {
         posts.addAll(list);
         notifyDataSetChanged();
     }
@@ -71,7 +71,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
         }
 
-        public void bind(Posts posts) {
+        public void bind(Post posts) {
             // Bind the posts data to the view elements
             tvDescription.setText(posts.getDescription());
             tvUsername.setText(posts.getUser().getUsername());
@@ -85,7 +85,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         public void onClick(View view) {
             int position = getAdapterPosition();
             if (position != RecyclerView.NO_POSITION) {
-                Posts posts = PostsAdapter.this.posts.get(position);
+                Post posts = PostsAdapter.this.posts.get(position);
                 Intent intent = new Intent(context, PostDetailsActivity.class);
                 intent.putExtra("posts", Parcels.wrap(posts));
                 context.startActivity(intent);
